@@ -1,0 +1,1031 @@
+"""
+✨ `Book_KeyOutput` returns the primary key fields of table type `Book`.
+
+It has the same format as `Book_Key`, but is only used as mutation return value.
+"""
+scalar Book_KeyOutput
+"""
+✨ `ReadingList_KeyOutput` returns the primary key fields of table type `ReadingList`.
+
+It has the same format as `ReadingList_Key`, but is only used as mutation return value.
+"""
+scalar ReadingList_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ Generated data input type for table 'Book'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Book_Data {
+  """
+  ✨ Generated from Field `Book`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Book`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Book`.`author` of type `String!`
+  """
+  author: String
+  """
+  ✨ `_expr` server value variant of `author` (✨ Generated from Field `Book`.`author` of type `String!`)
+  """
+  author_expr: String_Expr
+  """
+  ✨ Generated from Field `Book`.`coverUrl` of type `String`
+  """
+  coverUrl: String
+  """
+  ✨ `_expr` server value variant of `coverUrl` (✨ Generated from Field `Book`.`coverUrl` of type `String`)
+  """
+  coverUrl_expr: String_Expr
+  """
+  ✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Book`.`genre` of type `[String!]!`
+  """
+  genre: [String!]
+  """
+  ✨ `_update` server value variant of `genre` (✨ Generated from Field `Book`.`genre` of type `[String!]!`)
+  """
+  genre_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Book`.`isbn` of type `String`
+  """
+  isbn: String
+  """
+  ✨ `_expr` server value variant of `isbn` (✨ Generated from Field `Book`.`isbn` of type `String`)
+  """
+  isbn_expr: String_Expr
+  """
+  ✨ Generated from Field `Book`.`pages` of type `Int`
+  """
+  pages: Int
+  """
+  ✨ `_expr` server value variant of `pages` (✨ Generated from Field `Book`.`pages` of type `Int`)
+  """
+  pages_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `pages` (✨ Generated from Field `Book`.`pages` of type `Int`)
+  """
+  pages_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Book`.`publicationYear` of type `Int`
+  """
+  publicationYear: Int
+  """
+  ✨ `_expr` server value variant of `publicationYear` (✨ Generated from Field `Book`.`publicationYear` of type `Int`)
+  """
+  publicationYear_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `publicationYear` (✨ Generated from Field `Book`.`publicationYear` of type `Int`)
+  """
+  publicationYear_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Book`.`rating` of type `Float`
+  """
+  rating: Float
+  """
+  ✨ `_expr` server value variant of `rating` (✨ Generated from Field `Book`.`rating` of type `Float`)
+  """
+  rating_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `rating` (✨ Generated from Field `Book`.`rating` of type `Float`)
+  """
+  rating_update: [Float_Update!]
+  """
+  ✨ Generated from Field `Book`.`synopsis` of type `String`
+  """
+  synopsis: String
+  """
+  ✨ `_expr` server value variant of `synopsis` (✨ Generated from Field `Book`.`synopsis` of type `String`)
+  """
+  synopsis_expr: String_Expr
+  """
+  ✨ Generated from Field `Book`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `Book`.`title` of type `String!`)
+  """
+  title_expr: String_Expr
+  """
+  ✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!]
+}
+"""
+✨ Generated filter input type for table 'Book'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Book_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Book_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Book_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Book_Filter!]
+  """
+  ✨ Generated from Field `Book`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Book`.`author` of type `String!`
+  """
+  author: String_Filter
+  """
+  ✨ Generated from Field `Book`.`coverUrl` of type `String`
+  """
+  coverUrl: String_Filter
+  """
+  ✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Book`.`genre` of type `[String!]!`
+  """
+  genre: String_ListFilter
+  """
+  ✨ Generated from Field `Book`.`isbn` of type `String`
+  """
+  isbn: String_Filter
+  """
+  ✨ Generated from Field `Book`.`pages` of type `Int`
+  """
+  pages: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear` of type `Int`
+  """
+  publicationYear: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`rating` of type `Float`
+  """
+  rating: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`synopsis` of type `String`
+  """
+  synopsis: String_Filter
+  """
+  ✨ Generated from Field `Book`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Book`.`readingLists_on_book` of type `[ReadingList!]!`
+  """
+  readingLists_on_book: ReadingList_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Book'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Book_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Book_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Book_Filter
+}
+"""
+✨ Generated having input type for table 'Book'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Book_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Book_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Book_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Book_Having!]
+  """
+  ✨ Generated from Field `Book`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`author_count` of type `Int!`
+  """
+  author_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`coverUrl_count` of type `Int!`
+  """
+  coverUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`isbn_count` of type `Int!`
+  """
+  isbn_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`pages_count` of type `Int!`
+  """
+  pages_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear_count` of type `Int!`
+  """
+  publicationYear_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`rating_count` of type `Int!`
+  """
+  rating_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`synopsis_count` of type `Int!`
+  """
+  synopsis_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`pages_sum` of type `Int`
+  """
+  pages_sum: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear_sum` of type `Int`
+  """
+  publicationYear_sum: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`rating_sum` of type `Float`
+  """
+  rating_sum: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`pages_avg` of type `Float`
+  """
+  pages_avg: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear_avg` of type `Float`
+  """
+  publicationYear_avg: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`rating_avg` of type `Float`
+  """
+  rating_avg: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Book`.`pages_min` of type `Int`
+  """
+  pages_min: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear_min` of type `Int`
+  """
+  publicationYear_min: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`rating_min` of type `Float`
+  """
+  rating_min: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Book`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Book`.`pages_max` of type `Int`
+  """
+  pages_max: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`publicationYear_max` of type `Int`
+  """
+  publicationYear_max: Int_Filter
+  """
+  ✨ Generated from Field `Book`.`rating_max` of type `Float`
+  """
+  rating_max: Float_Filter
+  """
+  ✨ Generated from Field `Book`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Book'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Book_Key {
+  """
+  ✨ Generated from Field `Book`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Book`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Book'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Book_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Book_Filter
+}
+"""
+✨ Generated order input type for table 'Book'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Book_Order {
+  """
+  ✨ Generated from Field `Book`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`author` of type `String!`
+  """
+  author: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`coverUrl` of type `String`
+  """
+  coverUrl: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`isbn` of type `String`
+  """
+  isbn: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages` of type `Int`
+  """
+  pages: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear` of type `Int`
+  """
+  publicationYear: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating` of type `Float`
+  """
+  rating: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`synopsis` of type `String`
+  """
+  synopsis: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`author_count` of type `Int!`
+  """
+  author_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`coverUrl_count` of type `Int!`
+  """
+  coverUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`isbn_count` of type `Int!`
+  """
+  isbn_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages_count` of type `Int!`
+  """
+  pages_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear_count` of type `Int!`
+  """
+  publicationYear_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating_count` of type `Int!`
+  """
+  rating_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`synopsis_count` of type `Int!`
+  """
+  synopsis_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages_sum` of type `Int`
+  """
+  pages_sum: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear_sum` of type `Int`
+  """
+  publicationYear_sum: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating_sum` of type `Float`
+  """
+  rating_sum: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages_avg` of type `Float`
+  """
+  pages_avg: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear_avg` of type `Float`
+  """
+  publicationYear_avg: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating_avg` of type `Float`
+  """
+  rating_avg: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages_min` of type `Int`
+  """
+  pages_min: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear_min` of type `Int`
+  """
+  publicationYear_min: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating_min` of type `Float`
+  """
+  rating_min: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`pages_max` of type `Int`
+  """
+  pages_max: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`publicationYear_max` of type `Int`
+  """
+  publicationYear_max: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`rating_max` of type `Float`
+  """
+  rating_max: OrderDirection
+  """
+  ✨ Generated from Field `Book`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'ReadingList'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input ReadingList_Data {
+  """
+  ✨ Generated from Field `ReadingList`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `ReadingList`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `ReadingList`.`bookId` of type `UUID!`
+  """
+  bookId: UUID
+  """
+  ✨ `_expr` server value variant of `bookId` (✨ Generated from Field `ReadingList`.`bookId` of type `UUID!`)
+  """
+  bookId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `ReadingList`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `ReadingList`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `ReadingList`.`book` of type `Book!`
+  """
+  book: Book_Key
+  """
+  ✨ Generated from Field `ReadingList`.`user` of type `User!`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`
+  """
+  dateAdded: Timestamp
+  """
+  ✨ `_expr` server value variant of `dateAdded` (✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`)
+  """
+  dateAdded_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `dateAdded` (✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`)
+  """
+  dateAdded_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `dateAdded` (✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`)
+  """
+  dateAdded_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `ReadingList`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `ReadingList`.`status` of type `String!`)
+  """
+  status_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'ReadingList'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ReadingList_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [ReadingList_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: ReadingList_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [ReadingList_Filter!]
+  """
+  ✨ Generated from Field `ReadingList`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`bookId` of type `UUID!`
+  """
+  bookId: UUID_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`book` of type `Book!`
+  """
+  book: Book_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`
+  """
+  dateAdded: Timestamp_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`status` of type `String!`
+  """
+  status: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'ReadingList'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input ReadingList_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [ReadingList_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: ReadingList_Filter
+}
+"""
+✨ Generated having input type for table 'ReadingList'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ReadingList_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ReadingList_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ReadingList_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ReadingList_Having!]
+  """
+  ✨ Generated from Field `ReadingList`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`bookId_count` of type `Int!`
+  """
+  bookId_count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_count` of type `Int!`
+  """
+  dateAdded_count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_min` of type `Timestamp`
+  """
+  dateAdded_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_max` of type `Timestamp`
+  """
+  dateAdded_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'ReadingList'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input ReadingList_Key {
+  """
+  ✨ Generated from Field `ReadingList`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `ReadingList`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'ReadingList'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input ReadingList_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: ReadingList_Filter
+}
+"""
+✨ Generated order input type for table 'ReadingList'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input ReadingList_Order {
+  """
+  ✨ Generated from Field `ReadingList`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`bookId` of type `UUID!`
+  """
+  bookId: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`book` of type `Book!`
+  """
+  book: Book_Order
+  """
+  ✨ Generated from Field `ReadingList`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded` of type `Timestamp!`
+  """
+  dateAdded: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`status` of type `String!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`bookId_count` of type `Int!`
+  """
+  bookId_count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_count` of type `Int!`
+  """
+  dateAdded_count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_min` of type `Timestamp`
+  """
+  dateAdded_min: OrderDirection
+  """
+  ✨ Generated from Field `ReadingList`.`dateAdded_max` of type `Timestamp`
+  """
+  dateAdded_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `User`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `User`.`readingLists_on_user` of type `[ReadingList!]!`
+  """
+  readingLists_on_user: ReadingList_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}

@@ -1,0 +1,388 @@
+extend type Book {
+  """
+  ✨ List `ReadingList` objects in a one-to-many relationship (where `ReadingList`.`book` is this object).
+  """
+  readingLists_on_book(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: ReadingList_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [ReadingList_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: ReadingList_Having
+  ): [ReadingList!]! @fdc_generated(from: "ReadingList.book", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Book", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Book` table.
+  """
+  _count: Int! @fdc_generated(from: "Book", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `author` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  author_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.author", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `coverUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  coverUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.coverUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `isbn` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isbn_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.isbn", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `pages` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  pages_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.pages", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `publicationYear` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  publicationYear_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.publicationYear", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `rating` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  rating_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.rating", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `synopsis` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  synopsis_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.synopsis", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `title` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  title_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.title", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Book` table where the `updatedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  updatedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Book.updatedAt", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `pages` field in the `Book` table.
+  """
+  pages_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Book.pages", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `publicationYear` field in the `Book` table.
+  """
+  publicationYear_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Book.publicationYear", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `rating` field in the `Book` table.
+  """
+  rating_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Book.rating", purpose: QUERY_SUM)
+  """
+  ✨ Average the `pages` field in the `Book` table.
+  """
+  pages_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Book.pages", purpose: QUERY_AVG)
+  """
+  ✨ Average the `publicationYear` field in the `Book` table.
+  """
+  publicationYear_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Book.publicationYear", purpose: QUERY_AVG)
+  """
+  ✨ Average the `rating` field in the `Book` table.
+  """
+  rating_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Book.rating", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `createdAt` field in the `Book` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Book.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `pages` field in the `Book` table.
+  """
+  pages_min: Int @fdc_generated(from: "Book.pages", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `publicationYear` field in the `Book` table.
+  """
+  publicationYear_min: Int @fdc_generated(from: "Book.publicationYear", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `rating` field in the `Book` table.
+  """
+  rating_min: Float @fdc_generated(from: "Book.rating", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `updatedAt` field in the `Book` table.
+  """
+  updatedAt_min: Timestamp @fdc_generated(from: "Book.updatedAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Book` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Book.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `pages` field in the `Book` table.
+  """
+  pages_max: Int @fdc_generated(from: "Book.pages", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `publicationYear` field in the `Book` table.
+  """
+  publicationYear_max: Int @fdc_generated(from: "Book.publicationYear", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `rating` field in the `Book` table.
+  """
+  rating_max: Float @fdc_generated(from: "Book.rating", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `updatedAt` field in the `Book` table.
+  """
+  updatedAt_max: Timestamp @fdc_generated(from: "Book.updatedAt", purpose: QUERY_MAX)
+}
+extend type ReadingList {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "ReadingList", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `ReadingList` table.
+  """
+  _count: Int! @fdc_generated(from: "ReadingList", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `ReadingList` table where the `bookId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  bookId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList.bookId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `ReadingList` table where the `dateAdded` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  dateAdded_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList.dateAdded", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `ReadingList` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `ReadingList` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList.status", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `ReadingList` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `dateAdded` field in the `ReadingList` table.
+  """
+  dateAdded_min: Timestamp @fdc_generated(from: "ReadingList.dateAdded", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `dateAdded` field in the `ReadingList` table.
+  """
+  dateAdded_max: Timestamp @fdc_generated(from: "ReadingList.dateAdded", purpose: QUERY_MAX)
+}
+extend type User {
+  """
+  ✨ List `ReadingList` objects in a one-to-many relationship (where `ReadingList`.`user` is this object).
+  """
+  readingLists_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: ReadingList_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [ReadingList_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: ReadingList_Having
+  ): [ReadingList!]! @fdc_generated(from: "ReadingList.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.name", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+}

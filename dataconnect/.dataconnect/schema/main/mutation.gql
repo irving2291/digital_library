@@ -1,0 +1,338 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Book` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  book_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Book_Data!
+  ): Book_KeyOutput! @fdc_generated(from: "Book", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `ReadingList` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  readingList_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: ReadingList_Data!
+  ): ReadingList_KeyOutput! @fdc_generated(from: "ReadingList", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Book` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  book_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Book_Data!]!
+  ): [Book_KeyOutput!]! @fdc_generated(from: "Book", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `ReadingList` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  readingList_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [ReadingList_Data!]!
+  ): [ReadingList_KeyOutput!]! @fdc_generated(from: "ReadingList", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Book` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Book`.
+  """
+  book_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Book_Data!
+  ): Book_KeyOutput! @fdc_generated(from: "Book", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `ReadingList` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ReadingList`.
+  """
+  readingList_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: ReadingList_Data!
+  ): ReadingList_KeyOutput! @fdc_generated(from: "ReadingList", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Book` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Book`.
+  """
+  book_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Book_Data!]!
+  ): [Book_KeyOutput!]! @fdc_generated(from: "Book", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `ReadingList` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ReadingList`.
+  """
+  readingList_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [ReadingList_Data!]!
+  ): [ReadingList_KeyOutput!]! @fdc_generated(from: "ReadingList", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Book` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Book` or `null` if not found.
+  """
+  book_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Book_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Book_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Book_Data!
+  ): Book_KeyOutput @fdc_generated(from: "Book", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `ReadingList` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ReadingList` or `null` if not found.
+  """
+  readingList_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: ReadingList_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: ReadingList_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: ReadingList_Data!
+  ): ReadingList_KeyOutput @fdc_generated(from: "ReadingList", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Book` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  book_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Book_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Book_Data!
+  ): Int! @fdc_generated(from: "Book", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `ReadingList` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  readingList_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: ReadingList_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: ReadingList_Data!
+  ): Int! @fdc_generated(from: "ReadingList", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Book` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  book_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Book_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Book_FirstRow
+  ): Book_KeyOutput @fdc_generated(from: "Book", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `ReadingList` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  readingList_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: ReadingList_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: ReadingList_FirstRow
+  ): ReadingList_KeyOutput @fdc_generated(from: "ReadingList", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Book` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  book_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Book_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Book", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `ReadingList` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  readingList_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: ReadingList_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "ReadingList", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}

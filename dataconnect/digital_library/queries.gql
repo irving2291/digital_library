@@ -1,0 +1,58 @@
+query GetAllBooks @auth(level: PUBLIC) {
+  books {
+    id
+    title
+    author
+    genre
+    synopsis
+    publicationYear
+    rating
+    coverUrl
+  }
+}
+
+query SearchBooks($searchTerm: String!) @auth(level: PUBLIC) {
+  books(
+    where: {
+      _or: [
+        { title: { contains: $searchTerm } }
+        { author: { contains: $searchTerm } }
+      ]
+    }
+  ) {
+    id
+    title
+    author
+    genre
+    synopsis
+    rating
+    coverUrl
+  }
+}
+
+query GetBooksByGenre($genre: String!) @auth(level: PUBLIC) {
+  books(where: { genre: { includes: $genre } }) {
+    id
+    title
+    author
+    genre
+    synopsis
+    rating
+    coverUrl
+  }
+}
+
+query GetUserReadingList($userId: UUID!) @auth(level: PUBLIC) {
+  readingLists(where: { userId: { eq: $userId } }) {
+    id
+    status
+    dateAdded
+    book {
+      id
+      title
+      author
+      coverUrl
+      rating
+    }
+  }
+}

@@ -1,0 +1,264 @@
+mutation AddBook(
+  $title: String!
+  $author: String!
+  $isbn: String
+  $genre: [String!]!
+  $synopsis: String
+  $publicationYear: Int
+  $pages: Int
+  $coverUrl: String
+) @auth(level: NO_ACCESS) {
+  book_insert(
+    data: {
+      title: $title
+      author: $author
+      isbn: $isbn
+      genre: $genre
+      synopsis: $synopsis
+      publicationYear: $publicationYear
+      pages: $pages
+      coverUrl: $coverUrl
+    }
+  )
+}
+
+mutation CreateUser($name: String!, $email: String!) {
+  user_insert(data: { name: $name, email: $email })
+}
+
+mutation AddToReadingList($userId: UUID!, $bookId: UUID!, $status: String!) {
+  readingList_insert(
+    data: { userId: $userId, bookId: $bookId, status: $status }
+  )
+}
+
+mutation UpdateReadingStatus($readingListId: UUID!, $status: String!) {
+  readingList_update(id: $readingListId, data: { status: $status })
+}
+
+mutation SeedBooks {
+  book_insertMany(
+    data: [
+      {
+        title: "Cien años de soledad"
+        author: "Gabriel García Márquez"
+        isbn: "9780060883287"
+        genre: ["Ficción", "Realismo Mágico"]
+        synopsis: "La épica historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo."
+        publicationYear: 1967
+        pages: 417
+        rating: 4.8
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/91TvVQS7loL.jpg"
+      }
+      {
+        title: "Dune"
+        author: "Frank Herbert"
+        isbn: "9780441172719"
+        genre: ["Ciencia Ficción", "Aventura"]
+        synopsis: "Una épica historia sobre política, religión y ecología en el desierto planeta Arrakis, donde la especia melange es el recurso más valioso del universo."
+        publicationYear: 1965
+        pages: 688
+        rating: 4.5
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81zN7udGRUL.jpg"
+      }
+      {
+        title: "1984"
+        author: "George Orwell"
+        isbn: "9780451524935"
+        genre: ["Ficción", "Distopía"]
+        synopsis: "Una novela distópica sobre el totalitarismo y la vigilancia gubernamental en una sociedad donde el Gran Hermano lo ve todo."
+        publicationYear: 1949
+        pages: 328
+        rating: 4.7
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg"
+      }
+      {
+        title: "El Alquimista"
+        author: "Paulo Coelho"
+        isbn: "9780061122415"
+        genre: ["Ficción", "Autoayuda"]
+        synopsis: "La historia de Santiago, un joven pastor andaluz que viaja desde España hasta las pirámides de Egipto en busca de un tesoro."
+        publicationYear: 1988
+        pages: 163
+        rating: 4.2
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg"
+      }
+      {
+        title: "Sapiens: De animales a dioses"
+        author: "Yuval Noah Harari"
+        isbn: "9780062316097"
+        genre: ["No Ficción", "Historia"]
+        synopsis: "Una exploración fascinante de la historia de la humanidad, desde la evolución hasta los desafíos del siglo XXI."
+        publicationYear: 2011
+        pages: 443
+        rating: 4.6
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg"
+      }
+      {
+        title: "El Código Da Vinci"
+        author: "Dan Brown"
+        isbn: "9780307474278"
+        genre: ["Misterio", "Thriller"]
+        synopsis: "Robert Langdon se ve envuelto en un misterio que involucra sociedades secretas, arte renacentista y conspiraciones religiosas."
+        publicationYear: 2003
+        pages: 454
+        rating: 4.1
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/815WORuYMML.jpg"
+      }
+      {
+        title: "Steve Jobs"
+        author: "Walter Isaacson"
+        isbn: "9781451648539"
+        genre: ["Biografía", "Tecnología"]
+        synopsis: "La biografía autorizada del cofundador de Apple, basada en más de cuarenta entrevistas con Jobs y más de cien con familiares, amigos y colegas."
+        publicationYear: 2011
+        pages: 656
+        rating: 4.4
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81VStYnDGrL.jpg"
+      }
+      {
+        title: "El Señor de los Anillos: La Comunidad del Anillo"
+        author: "J.R.R. Tolkien"
+        isbn: "9780547928210"
+        genre: ["Fantasía", "Aventura"]
+        synopsis: "Frodo Bolsón hereda un anillo mágico de su tío Bilbo y debe emprender un peligroso viaje para destruirlo."
+        publicationYear: 1954
+        pages: 423
+        rating: 4.9
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/91jBdG2aHML.jpg"
+      }
+      {
+        title: "Orgullo y Prejuicio"
+        author: "Jane Austen"
+        isbn: "9780141439518"
+        genre: ["Romance", "Ficción"]
+        synopsis: "La compleja relación entre Elizabeth Bennet y el orgulloso Sr. Darcy en la Inglaterra del siglo XIX."
+        publicationYear: 1813
+        pages: 279
+        rating: 4.3
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81NLDvyAHrL.jpg"
+      }
+      {
+        title: "Hábitos Atómicos"
+        author: "James Clear"
+        isbn: "9780735211292"
+        genre: ["Autoayuda", "Productividad"]
+        synopsis: "Un método revolucionario para crear buenos hábitos y eliminar los malos, basado en los últimos descubrimientos de la neurociencia."
+        publicationYear: 2018
+        pages: 320
+        rating: 4.7
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL.jpg"
+      }
+      {
+        title: "El Arte de la Guerra"
+        author: "Sun Tzu"
+        isbn: "9781599869773"
+        genre: ["Filosofía", "Estrategia"]
+        synopsis: "El tratado militar más influyente del mundo, aplicable tanto en la guerra como en los negocios y la vida cotidiana."
+        publicationYear: -500
+        pages: 96
+        rating: 4.0
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81L-MkU8S-L.jpg"
+      }
+      {
+        title: "Piensa y Hazte Rico"
+        author: "Napoleon Hill"
+        isbn: "9781585424331"
+        genre: ["Autoayuda", "Negocios"]
+        synopsis: "Los principios del éxito basados en el estudio de más de 500 millonarios de la época, incluyendo Andrew Carnegie."
+        publicationYear: 1937
+        pages: 320
+        rating: 4.2
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71UypkUjStL.jpg"
+      }
+      {
+        title: "El Hobbit"
+        author: "J.R.R. Tolkien"
+        isbn: "9780547928227"
+        genre: ["Fantasía", "Aventura"]
+        synopsis: "Bilbo Bolsón se embarca en una aventura épica con trece enanos para recuperar el tesoro guardado por el dragón Smaug."
+        publicationYear: 1937
+        pages: 366
+        rating: 4.6
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/A1E1w1jwApL.jpg"
+      }
+      {
+        title: "Matar a un ruiseñor"
+        author: "Harper Lee"
+        isbn: "9780060935467"
+        genre: ["Ficción", "Drama"]
+        synopsis: "Scout Finch narra la historia de su infancia en Alabama, cuando su padre defiende a un hombre negro acusado injustamente."
+        publicationYear: 1960
+        pages: 376
+        rating: 4.8
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81aY1lxk+9L.jpg"
+      }
+      {
+        title: "La Chica del Tren"
+        author: "Paula Hawkins"
+        isbn: "9781594634024"
+        genre: ["Thriller", "Misterio"]
+        synopsis: "Rachel toma el mismo tren todos los días y observa la misma casa. Un día es testigo de algo impactante que cambia vidas para siempre."
+        publicationYear: 2015
+        pages: 325
+        rating: 3.9
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81a4E0hAanL.jpg"
+      }
+      {
+        title: "El Poder del Ahora"
+        author: "Eckhart Tolle"
+        isbn: "9781577314806"
+        genre: ["Autoayuda", "Espiritualidad"]
+        synopsis: "Una guía para la transformación espiritual que enseña cómo vivir en el momento presente y encontrar la paz interior."
+        publicationYear: 1997
+        pages: 236
+        rating: 4.3
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71QKQ9mwV7L.jpg"
+      }
+      {
+        title: "Inteligencia Emocional"
+        author: "Daniel Goleman"
+        isbn: "9780553383713"
+        genre: ["Psicología", "Autoayuda"]
+        synopsis: "Una exploración revolucionaria de cómo la inteligencia emocional puede ser más importante que el CI para el éxito en la vida."
+        publicationYear: 1995
+        pages: 352
+        rating: 4.1
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71aG+xDKSYL.jpg"
+      }
+      {
+        title: "El Padrino"
+        author: "Mario Puzo"
+        isbn: "9780451205766"
+        genre: ["Ficción", "Crimen"]
+        synopsis: "La saga épica de la familia Corleone y su imperio criminal en Nueva York desde 1945 hasta 1955."
+        publicationYear: 1969
+        pages: 448
+        rating: 4.4
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81F90PyxBlL.jpg"
+      }
+      {
+        title: "El Gran Gatsby"
+        author: "F. Scott Fitzgerald"
+        isbn: "9780743273565"
+        genre: ["Ficción", "Drama"]
+        synopsis: "La historia de Jay Gatsby y su obsesivo amor por Daisy Buchanan en los locos años veinte."
+        publicationYear: 1925
+        pages: 180
+        rating: 4.2
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg"
+      }
+      {
+        title: "El Monje que Vendió su Ferrari"
+        author: "Robin Sharma"
+        isbn: "9780062515674"
+        genre: ["Autoayuda", "Ficción"]
+        synopsis: "Un abogado exitoso abandona su vida de lujos para buscar la felicidad y el propósito en los Himalayas."
+        publicationYear: 1997
+        pages: 198
+        rating: 4.0
+        coverUrl: "https: //images-na.ssl-images-amazon.com/images/I/71BankcKkQL.jpg"
+      }
+    ]
+  )
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59180350167",
+    "project_id": "digital-library-437ab",
+    "storage_bucket": "digital-library-437ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59180350167:android:adc7bebb63382f287a8e92",
+        "android_client_info": {
+          "package_name": "com.digital_library.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwtbm0BBM9GTZGknb0xsKQELEPLR2Hvj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
