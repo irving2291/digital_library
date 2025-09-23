@@ -20,7 +20,7 @@ dependencies:
   dio: ^5.9.0
   firebase_app_check: ^0.4.0+1
   firebase_core: ^4.1.0
-  firebase_data_connect: ^0.2.0+2
+  firebase_data_connect: ^0.2.1
 
 dev_dependencies:
   bloc_test: ^10.0.0
